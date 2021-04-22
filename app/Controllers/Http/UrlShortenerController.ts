@@ -1,11 +1,21 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Url from 'App/Models/Url'
 import md5 from 'md5'
+import geoip from 'geoip-lite'
+import UserAgentParser from 'ua-parser-js'
 
 const minimumHashLength = 3
 const maximumHashLength = 7
 const maximumRounds = 5
 const defaultUrl = process.env.API_URL
+
+interface InterfaceGeoIpLocation {
+    country: string | undefined
+    region: string | undefined
+    timezone: string | undefined
+    city: string | undefined
+    ll: number[] | undefined
+}
 
 export default class UrlShortenerController {
     public async create({ request, response, auth }: HttpContextContract) {
@@ -21,29 +31,72 @@ export default class UrlShortenerController {
             return response.badRequest({ error: 'long_url is mandatory' })
         }
 
+        let urlHash = request.input('hash')
         try {
-            const urlHash = await this.generateHash(longUrl)
+            if (!urlHash) {
+                urlHash = await this.generateHash(longUrl)
+            }
+        } catch {
+            return response.internalServerError({
+                error: 'An error occurred during your request, try again later.',
+            })
+        }
 
+        try {
             const url = await user
                 ?.related('urls')
                 .create({ longUrl, shortUrlHash: urlHash, shortUrl: `${defaultUrl}${urlHash}` })
 
             return url.serialize()
         } catch {
-            return response.internalServerError({
-                error: 'An error occurred during your request, try again later.',
+            return response.badRequest({
+                error: 'Hash is not available',
             })
         }
     }
 
-    public async go({ params, response }: HttpContextContract) {
+    public async go({ params, response, request }: HttpContextContract) {
         const urlHash = params.hash
+
+        const ip = request.ip() || 'Unknown'
+        const location = geoip.lookup(ip) as InterfaceGeoIpLocation
+        const { browser, device, engine: browserEngine, ua: userAgent, os } = new UserAgentParser(
+            request.headers()['user-agent']
+        ).getResult()
+
+        const country = location?.country || 'Unknown'
+        const region = location?.region || 'Unknown'
+        const timezone = location?.timezone || 'Unknown'
+        const city = location?.city || 'Unknown'
+        const latitude = location?.ll ? location.ll[0] : 0
+        const longitude = location?.ll ? location.ll[1] : 0
+        const deviceType = device.type || 'Unknown'
+        const deviceModel = device.model || 'Unknown'
+        const deviceVendor = device.vendor || 'Unknown'
 
         try {
             const url = await Url.findByOrFail('short_url_hash', urlHash)
 
+            await url.related('analytics').create({
+                ip,
+                userAgent,
+                country,
+                region,
+                timezone,
+                city,
+                latitude,
+                longitude,
+                browser: browser.name || 'Unknown',
+                browserEngine: browserEngine.name || 'Unknown',
+                deviceModel,
+                deviceType,
+                deviceVendor,
+                os: os.name || 'Unknown',
+            })
+
             response.redirect(url.longUrl)
         } catch (e) {
+            console.error(e)
             return response.notFound()
         }
     }

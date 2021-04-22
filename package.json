@@ -13,7 +13,9 @@
   },
   "devDependencies": {
     "@adonisjs/assembler": "^3.0.0",
+    "@types/geoip-lite": "^1.4.1",
     "@types/md5": "^2.3.0",
+    "@types/ua-parser-js": "^0.7.35",
     "adonis-preset-ts": "^2.1.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
@@ -30,12 +32,14 @@
     "@adonisjs/core": "~5.0.4-preview-rc",
     "@adonisjs/lucid": "^10.0.0",
     "@adonisjs/repl": "^1.0.0",
+    "geoip-lite": "^1.4.2",
     "luxon": "^1.26.0",
     "md5": "^2.3.0",
     "mysql": "^2.18.1",
     "phc-bcrypt": "^1.0.6",
     "proxy-addr": "^2.0.6",
     "reflect-metadata": "^0.1.13",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "ua-parser-js": "^0.7.28"
   }
 }

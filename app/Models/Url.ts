@@ -1,5 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, BelongsTo, belongsTo, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+
+import User from './User'
+import Analytics from './Analytics'
 
 export default class Url extends BaseModel {
     @column({ isPrimary: true, serializeAs: null })
@@ -16,6 +19,12 @@ export default class Url extends BaseModel {
 
     @column({ serializeAs: null })
     public shortUrlHash: string
+
+    @belongsTo(() => User)
+    public user: BelongsTo<typeof User>
+
+    @hasMany(() => Analytics)
+    public analytics: HasMany<typeof Analytics>
 
     @column.dateTime({ autoCreate: true })
     public createdAt: DateTime
