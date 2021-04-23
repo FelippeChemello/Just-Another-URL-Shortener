@@ -109,8 +109,10 @@ export default class UrlShortenerController {
     public async go({ params, response, request }: HttpContextContract) {
         const urlHash = params.hash
 
-        const ips = request.ips() || 'Unknown'
-        const location = geoip.lookup(ips[0]) as InterfaceGeoIpLocation
+        console.log(request.header('X-Real-IP'))
+
+        const ip = request.header('X-Real-IP') || 'Unknown'
+        const location = geoip.lookup(ip) as InterfaceGeoIpLocation
         const { browser, device, engine: browserEngine, ua: userAgent, os } = new UserAgentParser(
             request.headers()['user-agent']
         ).getResult()
@@ -129,7 +131,7 @@ export default class UrlShortenerController {
             const url = await Url.findByOrFail('short_url_hash', urlHash)
 
             await url.related('analytics').create({
-                ip: ips.join(','),
+                ip,
                 userAgent,
                 country,
                 region,
