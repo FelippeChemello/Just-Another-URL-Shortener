@@ -15,4 +15,4 @@ jobs:
                   username: ${{ secrets.SSH_USER }}
                   port: ${{ secrets.SSH_PORT }}
                   password: ${{ secrets.SSH_PASSWORD }}
-                  script: sudo chown ${{ secrets.SSH_USER }} . -R && ./git_update.sh && docker-compose up -d --force-recreate
+                  script: sudo chown ${{ secrets.SSH_USER }} . -R && ./git_update.sh && docker-compose restart
