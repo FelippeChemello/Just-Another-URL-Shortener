@@ -39,6 +39,47 @@ Content-Type: application/json
 
 ###
 
+###
+
+# @name shortUrlBatch
+POST {{baseUrl}}/create/batch HTTP/1.1
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "urls": [
+                {
+                    "long_url": "https://google.com"
+                },
+                {
+                    "hash": "24p",
+                    "long_url": "https://devblogs.microsoft.com/commandline/the-initial-preview-of-gui-app-support-is-now-available-for-the-windows-subsystem-for-linux-2/"
+                },
+                {
+                    "hash": "t0u",
+                    "long_url": "https://www.cnet.com/news/google-supercharges-youtube-with-a-custom-video-chip/"
+                },
+                {
+                    "hash": "6k1",
+                    "long_url": "https://www.reuters.com/article/quanta-computer-cyber-idUSL4N2ME2X1"
+                },
+                {
+                    "hash": "1rh",
+                    "long_url": "https://www.welivesecurity.com/br/2021/04/21/whatsapp-rosa-falsa-atualizacao-baixa-um-trojan-no-dispositivo-das-vitimas/"
+                },
+                {
+                    "hash": "hj3",
+                    "long_url": "https://techcrunch.com/2021/04/20/netflix-q1-2021/"
+                },
+                {
+                    "hash": "uxa",
+                    "long_url": "https://newatlas.com/aircraft/airbus-liquid-hydrogen-cryogenic-superconductivity/"
+                }
+            ]
+}
+
+###
+
 # @name goUrl
 GET {{baseUrl}}/go/97d3 HTTP/1.1
 

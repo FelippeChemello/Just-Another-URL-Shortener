@@ -45,7 +45,7 @@ export default class UrlShortenerController {
         try {
             const url = await user
                 ?.related('urls')
-                .create({ longUrl, shortUrlHash: urlHash, shortUrl: `${defaultUrl}${urlHash}` })
+                .create({ longUrl, shortUrlHash: urlHash, shortUrl: `${defaultUrl}go/${urlHash}` })
 
             return url.serialize()
         } catch {
@@ -53,6 +53,57 @@ export default class UrlShortenerController {
                 error: 'Hash is not available',
             })
         }
+    }
+
+    public async createBatch({ request, response, auth }: HttpContextContract) {
+        const user = auth.user
+
+        if (!user) {
+            return response.unauthorized({ error: 'You must be logged in to use this resource' })
+        }
+
+        const urls = request.input('urls') as { long_url?: string; hash?: string }[]
+
+        if (!urls || urls.length < 1) {
+            return response.internalServerError({
+                error: 'Urls is mandatory',
+            })
+        }
+
+        const shortedUrlsPromises = urls.map(({ hash, long_url: longUrl }) => {
+            return new Promise(async (resolve) => {
+                if (!longUrl) {
+                    resolve({
+                        url: { hash, longUrl },
+                        status: 'failed',
+                        error: 'long_url is mandatory',
+                    })
+                    return
+                }
+
+                if (!hash) {
+                    hash = await this.generateHash(longUrl)
+                }
+
+                try {
+                    const url = await user.related('urls').create({
+                        longUrl,
+                        shortUrlHash: hash,
+                        shortUrl: `${defaultUrl}go/${hash}`,
+                    })
+
+                    resolve({ url: url.serialize(), status: 'ok' })
+                } catch {
+                    resolve({
+                        url: { hash, longUrl },
+                        status: 'failed',
+                        error: 'Hash is not available',
+                    })
+                }
+            })
+        })
+
+        return await Promise.all(shortedUrlsPromises)
     }
 
     public async go({ params, response, request }: HttpContextContract) {
