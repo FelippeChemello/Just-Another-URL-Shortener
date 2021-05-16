@@ -1,5 +1,5 @@
 @authToken = {{authenticateUser.response.body.token}}
-@baseUrl = http://localhost:3333
+@baseUrl = https://links.codestack.me
 
 GET http://localhost:3333/teste HTTP/1.1
 Authorization: Bearer {{authToken}}
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "email": "felippechemello@gmail.com",
-    "password": "123456"
+    "password": "Felippe@1999"
 }
 
 ###
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 {
     "email": "felippechemello@gmail.com",
-    "password": "123456"
+    "password": "Felippe@1999"
 }
 
 ###
@@ -34,10 +34,13 @@ Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
 {
-    "long_url": "https://google.com"
+    "long_url": "https://www.instagram.com/codestackme/"
 }
 
 ###
+
+# @name goUrl
+GET {{baseUrl}}/go/97d3 HTTP/1.1
 
 ###
 
@@ -48,39 +51,618 @@ Content-Type: application/json
 
 {
     "urls": [
-                {
-                    "long_url": "https://google.com"
-                },
-                {
-                    "hash": "24p",
-                    "long_url": "https://devblogs.microsoft.com/commandline/the-initial-preview-of-gui-app-support-is-now-available-for-the-windows-subsystem-for-linux-2/"
-                },
-                {
-                    "hash": "t0u",
-                    "long_url": "https://www.cnet.com/news/google-supercharges-youtube-with-a-custom-video-chip/"
-                },
-                {
-                    "hash": "6k1",
-                    "long_url": "https://www.reuters.com/article/quanta-computer-cyber-idUSL4N2ME2X1"
-                },
-                {
-                    "hash": "1rh",
-                    "long_url": "https://www.welivesecurity.com/br/2021/04/21/whatsapp-rosa-falsa-atualizacao-baixa-um-trojan-no-dispositivo-das-vitimas/"
-                },
-                {
-                    "hash": "hj3",
-                    "long_url": "https://techcrunch.com/2021/04/20/netflix-q1-2021/"
-                },
-                {
-                    "hash": "uxa",
-                    "long_url": "https://newatlas.com/aircraft/airbus-liquid-hydrogen-cryogenic-superconductivity/"
-                }
-            ]
+    {
+        "long_url": "https://devblogs.microsoft.com/commandline/the-initial-preview-of-gui-app-support-is-now-available-for-the-windows-subsystem-for-linux-2/",
+        "hash": "24p"
+    },
+    {
+        "long_url": "https://www.cnet.com/news/google-supercharges-youtube-with-a-custom-video-chip/",
+        "hash": "t0u"
+    },
+    {
+        "long_url": "https://www.reuters.com/article/quanta-computer-cyber-idUSL4N2ME2X1",
+        "hash": "6k1"
+    },
+    {
+        "long_url": "https://www.welivesecurity.com/br/2021/04/21/whatsapp-rosa-falsa-atualizacao-baixa-um-trojan-no-dispositivo-das-vitimas/",
+        "hash": "1rh"
+    },
+    {
+        "long_url": "https://techcrunch.com/2021/04/20/netflix-q1-2021/",
+        "hash": "hj3"
+    },
+    {
+        "long_url": "https://newatlas.com/aircraft/airbus-liquid-hydrogen-cryogenic-superconductivity/",
+        "hash": "uxa"
+    },
+    {
+        "long_url": "https://www.techtudo.com.br/noticias/2021/04/ministerio-da-justica-quer-ajustes-na-conduta-de-apple-e-samsung.ghtml",
+        "hash": "uvu"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/21/the_legit_real_star_wars/",
+        "hash": "p5o"
+    },
+    {
+        "long_url": "https://signal.org/blog/cellebrite-vulnerabilities/",
+        "hash": "woe"
+    },
+    {
+        "long_url": "https://www.bleepingcomputer.com/news/security/linux-bans-university-of-minnesota-for-committing-malicious-code/",
+        "hash": "y7v"
+    },
+    {
+        "long_url": "https://www.nasa.gov/press-release/nasa-s-perseverance-mars-rover-extracts-first-oxygen-from-red-planet/",
+        "hash": "nr4"
+    },
+    {
+        "long_url": "https://devblogs.microsoft.com/commandline/the-initial-preview-of-gui-app-support-is-now-available-for-the-windows-subsystem-for-linux-2/",
+        "hash": "z4q"
+    },
+    {
+        "long_url": "https://www.cnet.com/news/google-supercharges-youtube-with-a-custom-video-chip/",
+        "hash": "7oo"
+    },
+    {
+        "long_url": "https://www.reuters.com/article/quanta-computer-cyber-idUSL4N2ME2X1",
+        "hash": "tyi"
+    },
+    {
+        "long_url": "https://www.welivesecurity.com/br/2021/04/21/whatsapp-rosa-falsa-atualizacao-baixa-um-trojan-no-dispositivo-das-vitimas/",
+        "hash": "h7s"
+    },
+    {
+        "long_url": "https://techcrunch.com/2021/04/20/netflix-q1-2021/",
+        "hash": "s9f"
+    },
+    {
+        "long_url": "https://newatlas.com/aircraft/airbus-liquid-hydrogen-cryogenic-superconductivity/",
+        "hash": "njy"
+    },
+    {
+        "long_url": "https://www.techtudo.com.br/noticias/2021/04/ministerio-da-justica-quer-ajustes-na-conduta-de-apple-e-samsung.ghtml",
+        "hash": "wgz"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/21/the_legit_real_star_wars/",
+        "hash": "zaq"
+    },
+    {
+        "long_url": "https://signal.org/blog/cellebrite-vulnerabilities/",
+        "hash": "m86"
+    },
+    {
+        "long_url": "https://www.bleepingcomputer.com/news/security/linux-bans-university-of-minnesota-for-committing-malicious-code/",
+        "hash": "1xy"
+    },
+    {
+        "long_url": "https://www.nasa.gov/press-release/nasa-s-perseverance-mars-rover-extracts-first-oxygen-from-red-planet/",
+        "hash": "hoa"
+    },
+    {
+        "long_url": "https://canaltech.com.br/redes-sociais/facebook-agora-permite-exportar-postagens-para-google-docs-e-wordpress-183042/",
+        "hash": "ght"
+    },
+    {
+        "long_url": "https://www.scientificamerican.com/article/quantum-astronomy-could-create-telescopes-hundreds-of-kilometers-wide/",
+        "hash": "yi4"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/21/military_judi_ai/",
+        "hash": "gd8"
+    },
+    {
+        "long_url": "https://www.mobiletime.com.br/noticias/20/04/2021/tim-e-huawei-atingem-velocidade-de-18-gbps-com-5g-standalone/",
+        "hash": "0kv"
+    },
+    {
+        "long_url": "https://tecnoblog.net/434271/nubank-anuncia-fundos-de-investimento-com-aplicacao-a-partir-de-r-1/",
+        "hash": "w94"
+    },
+    {
+        "long_url": "https://www.kaspersky.com.br/blog/apps-falsos-auxilio-emergencial-google-play/17331/",
+        "hash": "qm1"
+    },
+    {
+        "long_url": "https://oglobo.globo.com/economia/stj-diz-que-condominio-pode-proibir-aluguel-de-imovel-por-airbnb-entenda-por-que-tema-divide-vizinhos-24979952",
+        "hash": "xx9"
+    },
+    {
+        "long_url": "https://tecnoblog.net/433151/santander-deve-indenizar-cliente-que-caiu-em-golpe-de-whatsapp-clonado/",
+        "hash": "szd"
+    },
+    {
+        "long_url": "https://interestingengineering.com/neuralink-read-minds-sell-private-thoughts",
+        "hash": "7tp"
+    },
+    {
+        "long_url": "https://www.wsj.com/articles/discord-ends-deal-talks-with-microsoft-11618938806",
+        "hash": "3az"
+    },
+    {
+        "long_url": "https://tecnoblog.net/433535/easter-egg-do-google-celebra-voo-do-helicoptero-ingenuity-em-marte/",
+        "hash": "7dr"
+    },
+    {
+        "long_url": "https://github.blog/2021-04-19-open-source-goes-to-mars/",
+        "hash": "zoq"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/16/22387492/google-floc-ad-tech-privacy-browsers-brave-vivaldi-edge-mozilla-chrome-safari",
+        "hash": "j4t"
+    },
+    {
+        "long_url": "https://www.engadget.com/edward-snowden-nft-sold-for-55-million-080508241.html",
+        "hash": "jxb"
+    },
+    {
+        "long_url": "https://news.berkeley.edu/2021/04/14/tiny-wireless-implant-detects-oxygen-deep-within-the-body/",
+        "hash": "i78"
+    },
+    {
+        "long_url": "https://techcrunch.com/2021/04/19/facebook-invests-in-audio-with-short-form-soundbites-feature-podcast-support-and-a-clubhouse-clone/",
+        "hash": "jfz"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/19/22391587/long-covid-brain-cognitive-treatment-video-game-akili",
+        "hash": "ldf"
+    },
+    {
+        "long_url": "https://www.welivesecurity.com/br/2021/04/19/site-da-biblioteca-nacional-sofre-ataque-de-ransomware/",
+        "hash": "t44"
+    },
+    {
+        "long_url": "https://techcrunch.com/2021/04/16/spacex-wins-nasa-contract-to-develop-human-landing-system-for-returning-to-the-moon/",
+        "hash": "5j9"
+    },
+    { "long_url": "https://www.apple.com/apple-events/", "hash": "dl4" },
+    {
+        "long_url": "https://developers.google.com/search/blog/2021/04/more-details-page-experience",
+        "hash": "jnz"
+    },
+    {
+        "long_url": "https://www.bleepingcomputer.com/news/security/wordpress-may-automatically-disable-google-floc-on-websites/",
+        "hash": "vv6"
+    },
+    {
+        "long_url": "https://techdows.com/2021/04/chrome-memories-let-you-see-find-your-web-activity.html",
+        "hash": "it0"
+    },
+    {
+        "long_url": "https://blogs.nvidia.com/blog/2021/04/16/gan-research-knight-rider-ai-omniverse/",
+        "hash": "lbl"
+    },
+    {
+        "long_url": "https://academictimes.com/smartphones-can-detect-huge-solar-storms/",
+        "hash": "y72"
+    },
+    {
+        "long_url": "https://twitter.com/alex193a/status/1280239076982116354",
+        "hash": "l14"
+    },
+    {
+        "long_url": "https://tecnoblog.net/433219/status-online-do-whatsapp-e-alvo-de-aplicativos-para-stalkers/",
+        "hash": "gvx"
+    },
+    {
+        "long_url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2266148",
+        "hash": "hjm"
+    },
+    {
+        "long_url": "https://www.space.com/mars-helicopter-ingenuity-first-flight-success",
+        "hash": "q99"
+    },
+    {
+        "long_url": "https://www.reuters.com/world/uk/uk-intervenes-nvidias-takeover-arm-national-security-grounds-2021-04-19/",
+        "hash": "262"
+    },
+    {
+        "long_url": "https://www.b9.com.br/142376/apple-afirma-iphone-sem-carregador-salva-861-mil-toneladas-metal/",
+        "hash": "3ga"
+    },
+    {
+        "long_url": "https://www.notion.so/felippechemello/Introdu-o-a-teoria-de-grafos-c7f154d25ace4f50832ea67267065756",
+        "hash": "grafos"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/16/tsmc_chip_forecast/",
+        "hash": "ibf"
+    },
+    {
+        "long_url": "https://www.bloomberg.com/news/articles/2021-04-12/huawei-to-invest-1-billion-on-car-tech-it-says-surpasses-tesla",
+        "hash": "fgw"
+    },
+    {
+        "long_url": "https://au.finance.yahoo.com/finance/news/ifa-berlin-2021-full-scale-return-in-person-event-190708696.html",
+        "hash": "w68"
+    },
+    {
+        "long_url": "https://www.space.com/russia-luna-25-returning-to-moon",
+        "hash": "wtn"
+    },
+    {
+        "long_url": "https://engenhariae.com.br/editorial/ciencia/o-branco-mais-branco-e-tambem-o-mais-frio-entenda",
+        "hash": "lzy"
+    },
+    {
+        "long_url": "https://www.camara.leg.br/propostas-legislativas/2272158",
+        "hash": "lrh"
+    },
+    {
+        "long_url": "https://tecnoblog.net/432617/whatsapp-exibe-imagens-em-tamanho-maior-dentro-de-conversas/",
+        "hash": "926"
+    },
+    {
+        "long_url": "https://g1.globo.com/economia/tecnologia/noticia/2021/04/15/facebook-integra-mensagens-do-instagram-com-messenger-no-brasil.ghtml",
+        "hash": "cyo"
+    },
+    {
+        "long_url": "https://www.epirusinc.com/solutions/counter-uas",
+        "hash": "mps"
+    },
+    {
+        "long_url": "https://www.forbes.com/sites/alistaircharlton/2021/04/15/ferrari-confirms-first-all-electric-car-will-arrive-in-2025/?sh=58347bce4a9d",
+        "hash": "ume"
+    },
+    {
+        "long_url": "https://www.reuters.com/article/eu-tech-artificialintelligence/eu-wants-to-ban-use-of-ai-for-surveillance-idINL1N2M71DL",
+        "hash": "815"
+    },
+    {
+        "long_url": "https://opensource.googleblog.com/2021/04/logica-organizing-your-data-queries.html",
+        "hash": "z2x"
+    },
+    {
+        "long_url": "https://www.androidpolice.com/2021/04/15/if-youre-using-an-ad-blocker-in-google-docs-you-could-run-into-weird-problems/",
+        "hash": "ihz"
+    },
+    {
+        "long_url": "https://developer.chrome.com/blog/new-in-chrome-90/",
+        "hash": "xbl"
+    },
+    { "long_url": "https://earthengine.google.com/timelapse/", "hash": "mb8" },
+    {
+        "long_url": "https://www.forbes.com/sites/rachelsandler/2021/04/14/twitter-to-study-whether-its-algorithm-causes-unintentional-harms/?sh=48c2b745516a",
+        "hash": "gye"
+    },
+    {
+        "long_url": "https://www.mobiletime.com.br/noticias/14/04/2021/pix-supera-1-bilhao-de-transacoes-em-cinco-meses/",
+        "hash": "mv0"
+    },
+    {
+        "long_url": "https://www.camara.leg.br/noticias/737425-proposta-preve-regras-para-provedor-retirar-conteudo-de-usuario-de-internet/",
+        "hash": "tc0"
+    },
+    {
+        "long_url": "https://www.nasa.gov/directorates/spacetech/niac/2021_Phase_I/Lofted_Environmental_Venus_Sensors/",
+        "hash": "s4k"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/14/22383668/tcl-fold-n-roll-concept-rollable-phone-tablet",
+        "hash": "fe2"
+    },
+    {
+        "long_url": "https://techxplore.com/news/2021-04-batteries-wearable-biofuel-cells-electricity.html",
+        "hash": "r0l"
+    },
+    {
+        "long_url": "https://filipedeschamps.com.br/newsletter",
+        "hash": "newsletter-filipe"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/13/aws_renames_elasticsearch_fork_opensearch/",
+        "hash": "iv4"
+    },
+    {
+        "long_url": "https://mars.nasa.gov/technology/helicopter/status/290/work-progresses-toward-ingenuity-s-first-flight-on-mars/",
+        "hash": "rko"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/13/22381511/facebook-video-speed-dating-npe-team-sparked-feature",
+        "hash": "zn1"
+    },
+    {
+        "long_url": "https://www.gamesindustry.biz/articles/2021-04-12-new-market-research-reveals-growing-number-of-old-aged-gamers",
+        "hash": "jh3"
+    },
+    {
+        "long_url": "https://tecnoblog.net/431255/qualcomm-snapdragon-7c-passa-na-anatel-e-pode-ser-fabricado-no-brasil/",
+        "hash": "gxz"
+    },
+    {
+        "long_url": "https://www.mobiletime.com.br/noticias/13/04/2021/tim-inicia-construcao-de-antenas-4g-com-energia-solar-em-sp/",
+        "hash": "vbs"
+    },
+    {
+        "long_url": "https://canaltech.com.br/redes-sociais/lancamento-instagram-lite-brasil-182576/",
+        "hash": "1y0"
+    },
+    {
+        "long_url": "https://www.justice.gov/opa/pr/justice-department-announces-court-authorized-effort-disrupt-exploitation-microsoft-exchange",
+        "hash": "bcp"
+    },
+    {
+        "long_url": "https://canaltech.com.br/negocios/magazine-luiza-compra-jovem-nerd-182688/",
+        "hash": "0re"
+    },
+    {
+        "long_url": "https://canaltech.com.br/seguranca/fiocruz-tinha-falha-cibernetica-que-poderia-afetar-pesquisas-contra-a-covid-19-182681/",
+        "hash": "gbr"
+    },
+    { "long_url": "https://replit.com/languages/kaboom", "hash": "5qr" },
+    { "long_url": "https://brave.com/why-brave-disables-floc/", "hash": "3p2" },
+    {
+        "long_url": "https://www.nvidia.com/en-us/data-center/grace-cpu/",
+        "hash": "nlx"
+    },
+    {
+        "long_url": "https://www.technologyreview.com/2021/04/12/1022420/nasa-lunar-rover-viper-open-source-software/",
+        "hash": "hei"
+    },
+    {
+        "long_url": "https://techcrunch.com/2019/05/17/spotify-is-test-driving-a-car-hardware-thing-called-car-thing/",
+        "hash": "696"
+    },
+    {
+        "long_url": "https://electrek.co/2021/04/12/tesla-ait-better-not-just-for-full-self-driving/",
+        "hash": "qe1"
+    },
+    {
+        "long_url": "https://www.popularmechanics.com/science/a36014979/bill-gates-sun-blocking-experiment-postponed/",
+        "hash": "msn"
+    },
+    {
+        "long_url": "https://www.sydney.edu.au/news-opinion/news/2021/04/13/student-physics-homework-picked-up-by-amazon-web-services-quantum.html",
+        "hash": "9cm"
+    },
+    {
+        "long_url": "https://www.bleepingcomputer.com/news/security/google-chrome-microsoft-edge-zero-day-vulnerability-shared-on-twitter/",
+        "hash": "e5u"
+    },
+    {
+        "long_url": "https://www.news18.com/news/tech/major-whatsapp-warning-your-whatsapp-may-be-hacked-and-theres-nothing-you-can-do-3635069.html",
+        "hash": "ec3"
+    },
+    { "long_url": "https://pages.cloudflare.com/", "hash": "laz" },
+    { "long_url": "https://github.com/google/monster-mash", "hash": "t6f" },
+    {
+        "long_url": "https://techcrunch.com/2021/04/12/microsoft-is-acquiring-nuance-communications-for-19-7b/",
+        "hash": "kqs"
+    },
+    {
+        "long_url": "https://futurism.com/the-byte/fbi-arrests-man-plotting-bomb-data-center-cause-huge-internet-outage",
+        "hash": "b60"
+    },
+    {
+        "long_url": "https://www.livescience.com/nasa-mars-helicopter-flight-delay.html",
+        "hash": "6tp"
+    },
+    {
+        "long_url": "https://canaltech.com.br/espaco/60-anos-do-voo-de-yuri-gagarin-e-celebrado-em-evento-online-e-gratuito-hoje-182315/",
+        "hash": "aa8"
+    },
+    {
+        "long_url": "http://pedbrasil.org.br/estrategia-brasileira-de-inteligencia-artificial-ebia/",
+        "hash": "sng"
+    },
+    {
+        "long_url": "https://www.procon.sp.gov.br/procon-sp-notifica-facebook-para-reuniao/",
+        "hash": "z34"
+    },
+    {
+        "long_url": "https://www.wsj.com/articles/googles-secret-project-bernanke-revealed-in-texas-antitrust-case-11618097760",
+        "hash": "64r"
+    },
+    {
+        "long_url": "https://rh.gatech.edu/news/645735/leveraging-5g-network-wirelessly-power-iot-devices",
+        "hash": "m0i"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/12/iran_cyber_attack_theory/",
+        "hash": "utw"
+    },
+    {
+        "long_url": "https://discourse.julialang.org/t/julia-and-the-satellite-amazonia-1/57541",
+        "hash": "lgn"
+    },
+    {
+        "long_url": "https://github.com/microsoft/CyberBattleSim",
+        "hash": "zqc"
+    },
+    {
+        "long_url": "https://blog.malwarebytes.com/exploits-and-vulnerabilities/2021/04/zoom-zero-day-discovery-makes-calls-safer-hackers-200000-richer/",
+        "hash": "zb9"
+    },
+    {
+        "long_url": "https://br.noticias.yahoo.com/minera%C3%A7%C3%A3o-criptomoedas-pode-dificultar-metas-184000381.html",
+        "hash": "n4g"
+    },
+    {
+        "long_url": "https://cybernews.com/news/stolen-data-of-500-million-linkedin-users-being-sold-online-2-million-leaked-as-proof-2/",
+        "hash": "y4u"
+    },
+    {
+        "long_url": "https://twitter.com/1ZRR4H/status/1380207820302340104",
+        "hash": "4dh"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/8/22374749/elon-musk-neuralink-monkey-pong-brain-interface",
+        "hash": "ixv"
+    },
+    {
+        "long_url": "https://developers.google.com/search/blog/2021/04/product-reviews-update",
+        "hash": "7xs"
+    },
+    {
+        "long_url": "https://tecnoblog.net/429734/policia-usa-cellebrite-para-resgatar-provas-apagadas-de-celular-no-caso-henry-borel/",
+        "hash": "5u5"
+    },
+    {
+        "long_url": "https://www.bleepingcomputer.com/news/security/visa-hackers-increasingly-using-web-shells-to-steal-credit-cards/",
+        "hash": "o81"
+    },
+    {
+        "long_url": "https://azure.microsoft.com/en-us/blog/deepen-the-value-chain-for-geospatial-earth-imagery-on-cloud-using-azure-orbital/",
+        "hash": "h5b"
+    },
+    {
+        "long_url": "https://www.androidpolice.com/2021/04/07/google-i-o-2021-has-been-announced-and-its-the-first-free-i-o-in-memory/",
+        "hash": "vo3"
+    },
+    {
+        "long_url": "https://olhardigital.com.br/2021/04/07/cinema-e-streaming/netflix-queda-mercado/",
+        "hash": "rr7"
+    },
+    {
+        "long_url": "https://www.cisoadvisor.com.br/maioria-dos-brasileiros-paga-resgate-de-ransomware-so-1-3-tem-dados-devolvidos/",
+        "hash": "mxs"
+    },
+    {
+        "long_url": "https://www.pesquisagamebrasil.com.br/pt/pesquisa-game-brasil/",
+        "hash": "bnn"
+    },
+    {
+        "long_url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2021/04/em-live-ministro-marcos-pontes-anuncia-pre-lancamento-de-programa-nacional-de-tecnologia",
+        "hash": "mm9"
+    },
+    {
+        "long_url": "https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/",
+        "hash": "qvu"
+    },
+    {
+        "long_url": "https://scitechdaily.com/new-material-breakthrough-could-be-the-key-to-revolutionary-transparent-electronics/",
+        "hash": "fcy"
+    },
+    {
+        "long_url": "https://redeglobo.globo.com/novidades/noticia/globo-anuncia-parceria-estrategica-de-co-inovacao-e-migracao-para-nuvem-com-google-cloud.ghtml",
+        "hash": "i2z"
+    },
+    {
+        "long_url": "https://tecnoblog.net/429453/receita-quer-imposto-sobre-livros-e-isso-deve-afetar-kindle-e-e-books/",
+        "hash": "939"
+    },
+    {
+        "long_url": "https://security.googleblog.com/2021/04/rust-in-android-platform.html",
+        "hash": "ht4"
+    },
+    {
+        "long_url": "https://blog.seagate.com/enterprises/seagate-has-shipped-three-zettabytes-of-data-storage/",
+        "hash": "0yo"
+    },
+    {
+        "long_url": "https://www.wired.com/story/signal-mobilecoin-payments-messaging-cryptocurrency/",
+        "hash": "0j7"
+    },
+    {
+        "long_url": "https://www.counterpointresearch.com/global-smartphone-shipments-2/",
+        "hash": "njt"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/04/07/samsung_q1_2021_guidance/",
+        "hash": "iuc"
+    },
+    {
+        "long_url": "https://www.ancedbrasil.org.br/anced-entra-na-justica-pedindo-proibicao-de-sorteios-ilegais-em-jogos-eletronicos/",
+        "hash": "gzx"
+    },
+    {
+        "long_url": "https://www.procon.sp.gov.br/procon-sp-notifica-facebook-3/",
+        "hash": "ojw"
+    },
+    { "long_url": "https://www.tiobe.com/tiobe-index/", "hash": "2hr" },
+    {
+        "long_url": "https://www1.folha.uol.com.br/mercado/2021/04/privacidade-do-whatsapp-e-questionada-no-ministerio-da-justica-e-na-anpd.shtml",
+        "hash": "gmp"
+    },
+    {
+        "long_url": "https://www.youtube.com/channel/UCEQb3ajJgTK_Xr33OE0jeoQ",
+        "hash": "youtube"
+    },
+    {
+        "long_url": "https://www.gamesindustry.biz/articles/2021-04-06-nintendo-xbox-and-ubisoft-back-digital-only-e3-2021",
+        "hash": "x6e"
+    },
+    {
+        "long_url": "https://canaltech.com.br/navegadores/microsoft-edge-ganha-mercado-e-ultrapassa-firefox-em-total-de-usuarios-em-marco-182030",
+        "hash": "rz3"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/5/22368488/yahoo-answers-shutdown-may-4-internet-era-over-rip",
+        "hash": "zh4"
+    },
+    {
+        "long_url": "https://spectrum.ieee.org/tech-talk/computing/hardware/nitrogen-vacancy-diamond-quantum-computer-accelerator-qubits-server-rack",
+        "hash": "gdf"
+    },
+    {
+        "long_url": "https://www.japantimes.co.jp/news/2020/10/10/business/economy-business/bank-of-japan-test-digital-currency-2021/",
+        "hash": "bos"
+    },
+    {
+        "long_url": "https://www.eurekalert.org/pub_releases/2021-03/iidt-aas032621.php",
+        "hash": "zy0"
+    },
+    {
+        "long_url": "https://www.theregister.com/2021/03/31/wifi_devices_monitoring/",
+        "hash": "9ny"
+    },
+    {
+        "long_url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2021/04/06/funcionarios-de-fornecedoras-da-lg-entram-em-greve-apos-anuncio-de-fim-da-producao-de-celulares-em-taubate.ghtml",
+        "hash": "l07"
+    },
+    {
+        "long_url": "https://www.universetoday.com/150671/gravitational-lenses-could-allow-a-galaxy-wide-internet/",
+        "hash": "141"
+    },
+    {
+        "long_url": "https://www.tecmundo.com.br/mercado/215040-mark-zuckerberg-usando-signal-principal-rival-whatsapp.htm",
+        "hash": "jsu"
+    },
+    {
+        "long_url": "https://futurism.com/the-byte/neuralink-cofounder-tech-build-actual-jurassic-park",
+        "hash": "kc2"
+    },
+    { "long_url": "https://filipedeschamps.com.br/newsletter", "hash": "0ke" },
+    {
+        "long_url": "https://www.ibm.com/blogs/research/2021/03/quantum-developer-certification/",
+        "hash": "c9r"
+    },
+    {
+        "long_url": "https://www.grenzwissenschaft-aktuell.de/latest-emdrive-tests-at-dresden-university-shows-impossible-engine-does-not-develop-any-thrust20210321/",
+        "hash": "l9g"
+    },
+    {
+        "long_url": "https://9to5mac.com/2021/04/05/tim-cook-says-he-probably-wont-be-at-apple-in-10-years-time/",
+        "hash": "ij5"
+    },
+    {
+        "long_url": "https://www.techradar.com/nz/news/there-will-soon-be-more-smart-devices-on-earth-than-people",
+        "hash": "23b"
+    },
+    {
+        "long_url": "https://www.theverge.com/2021/4/2/22364245/super-mario-bros-most-expensive-game-ever-record-sealed-auction",
+        "hash": "9dl"
+    },
+    {
+        "long_url": "https://techcrunch.com/2021/04/04/lg-is-shutting-down-its-smartphone-business-worldwide/",
+        "hash": "2gd"
+    },
+    {
+        "long_url": "https://www.brown.edu/news/2021-03-31/braingate-wireless",
+        "hash": "ueu"
+    },
+    {
+        "long_url": "https://edition.cnn.com/2021/04/02/success/linkedin-paid-week-off/index.html",
+        "hash": "9wb"
+    },
+    {
+        "long_url": "https://www.businessinsider.com/mark-zuckerberg-phone-number-facebook-leak-data-reports-2021-4",
+        "hash": "tny"
+    },
+    {
+        "long_url": "https://www.businessinsider.com/stolen-data-of-533-million-facebook-users-leaked-online-2021-4",
+        "hash": "9br"
+    }
+]
+
 }
-
-###
-
-# @name goUrl
-GET {{baseUrl}}/go/97d3 HTTP/1.1
-
-###
