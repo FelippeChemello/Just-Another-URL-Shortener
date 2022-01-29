@@ -3466,10 +3466,10 @@ pg-connection-string@2.4.0:
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.4.0.tgz#c979922eb47832999a204da5dbe1ebf2341b6a10"
   integrity sha512-3iBXuv7XKvxeMrIgym7njT+HlZkwZqqGX4Bu9cci8xHZNT+Um1gWKqCsAzcC0d95rcKMU5WBg6YRUcHyV0HZKQ==
 
-phc-bcrypt@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/phc-bcrypt/-/phc-bcrypt-1.0.6.tgz#bee36ebb1a64dd94a460a0137821dcfb9164c067"
-  integrity sha512-uOR2F2F5+qfB8oscAnJ6h4cB3b4i7vz9vG72IDQb8E6S96iNYTEwTsh+7/gnOLSq7Zlf2slJ+UPzTsy5Z7d0rQ==
+phc-bcrypt@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/phc-bcrypt/-/phc-bcrypt-1.0.7.tgz#8ca74a35569206dd35bc7d07cda600f1c87acb7f"
+  integrity sha512-seNphgu9x8NgzpemlweNsxvcyH0bqJSjNEz1+d3mRCicZ6ucFzmASaNhUiGkpZ8KltTIWz4/ppB3UEhl8OctGA==
   dependencies:
     "@kdf/salt" "^2.0.1"
     "@phc/format" "^1.0.0"
